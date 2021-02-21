@@ -1,10 +1,10 @@
-name: learn-github-actions
+name: eessi_generate_sets
 on: [push]
 jobs:
-  check-bats-version:
+  gen-eessi-sets:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+      - run: pip install pyaml
+      - run: etc/eessi/mk_eessi_sets.py 2021.02
